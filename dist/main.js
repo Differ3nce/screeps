@@ -17,6 +17,8 @@ module.exports.loop = function () {
         var creep = Game.creeps[name];
         role[creep.memory.role].run(creep);
     }
+
+    console.log("hi emma");
     
     if(Game.spawns['Spawn1'].memory.role === undefined) Game.spawns['Spawn1'].memory.role = 'basicGenerator'
 }

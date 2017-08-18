@@ -5,6 +5,7 @@ var upgrading = require('behavior.upgrading');
 var attacking = require('behavior.attacking');
 var scouting = require('behavior.scouting');
 var healing = require('behavior.healing');
+var repairing = require('behavior.repairing');
 
 module.exports = {
     harvesting: harvesting,
@@ -14,4 +15,5 @@ module.exports = {
     attacking: attacking,
     scouting: scouting,
     healing: healing,
+    repairing: repairing,
 };
