@@ -9,6 +9,7 @@ var repairing = {
                     return (structure.hits < 0.999 * structure.hitsMax)
                 }
             });
+        console.log(targets);
         if(targets.length) {
             targets = targets.sort(function(a, b){ a.hits - b.hits });
             if(creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
