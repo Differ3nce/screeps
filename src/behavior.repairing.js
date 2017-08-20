@@ -10,7 +10,7 @@ var repairing = {
                 }
             });
         if(targets.length) {
-            targets = targets.sort(function(a, b){ a.hits - b.hits });
+            targets = targets.sort(function(a, b){ b.hits - a.hits });
             if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
             }
