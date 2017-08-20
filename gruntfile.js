@@ -17,6 +17,7 @@ module.exports = function (grunt) {
   grunt.log.writeln('Branch: ' + branch)
 
   // Load needed tasks
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-screeps')
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-copy')
@@ -113,12 +114,19 @@ module.exports = function (grunt) {
           config: '.jsbeautifyrc'
         }
       }
-    }
+    },
+
+    watch: {
+      scripts: {
+        files: ['**/*.js'],
+        tasks: ['clean', 'copy:screeps',  'file_append:versioning', 'screeps'],
+      },
+    },
 
   })
 
   // Combine the above into a default task
-  grunt.registerTask('default',  ['clean', 'copy:screeps',  'file_append:versioning', 'screeps']);
+  grunt.registerTask('default',  ['watch']);
   grunt.registerTask('private',  ['clean', 'copy:screeps',  'file_append:versioning', 'rsync:private']);
   grunt.registerTask('test',     ['jsbeautifier:verify']);
   grunt.registerTask('pretty',   ['jsbeautifier:modify']);
