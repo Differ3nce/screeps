@@ -16,7 +16,7 @@ var roleBuilder = {
 	    if(creep.memory.behavior.name == behaviortype.harvesting.name && creep.carry.energy == creep.carryCapacity) {
 	        var targets = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
-                    return (structure.hits < 0.99 * structure.hitsMax)
+                    return (structure.hits < 0.999 * structure.hitsMax)
                 }
             });
             if(targets.length)
