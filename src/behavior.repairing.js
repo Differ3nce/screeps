@@ -11,8 +11,8 @@ var repairing = {
             });
         if(targets.length) {
             targets = targets.sort(function(a, b){ a.hits - b.hits });
+            console.log(creep.build(targets[0]));
             if(creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
-                console.log('moving');
                 creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
             }
         } else {
