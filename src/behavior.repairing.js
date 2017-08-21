@@ -6,7 +6,7 @@ var repairing = {
     run: function(creep) {
         var targets = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
-                    return (structure.hits < 0.999 * structure.hitsMax)
+                    return (structure.hits < 0.5 * structure.hitsMax)
                 }
             });
         if(targets.length) {
